@@ -1,0 +1,19 @@
+<ion-view title="{{exercise.name}}">
+	<ion-content has-header="true" padding="true">
+		<div class="card">
+			<div class="item item-text-wrpa">
+				<strong><span class="positive">weight:</span> {{ exercise.weight }} lbs</strong>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="item item-divider">
+				Exercise Settings
+			</div>
+			<div ng-repeat="(settingName, setting) in exercise.settings" class="item item-text-wrap">
+				<span class="positive">{{ settingName }}:</span> {{ setting }}
+			</div>
+			<div ng-if="exercise.settings | isEmpty" class="item item-text-wrap">None</div>
+		</div>
+	</ion-content>
+</ion-view>

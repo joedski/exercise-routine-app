@@ -1,0 +1,31 @@
+Exercise App
+
+Sections: (probably shown by tabs.)
+	All Exercises:
+		Shows all items.
+		Items each show their catagories.
+		Items each show the appropriate seat/etc and weight settings
+		Items each have the option to edit settings, etc.
+	Daily Routine:
+		Selects 5 items, one from each of the categorise:
+			Items cannot be the same as they were in the last full-re-roll of the Daily Routine.
+			Items should prefer having all their catagories unique, but only the specified catagories actually must be unique.
+				Thus, although multiple machines may specify 'glutes' as a catagory, they will not exclude based on it, though it may factor into a lower preference.
+		Items each show their catagories.
+		Items each show the appropriate seat/etc and weight settings
+		Items each have the option to edit settings, etc.
+		Items each have the option to reroll that one (that particular machine may be occupied.)
+		Items have a check-toggle always visible to indicate completion.
+		Rerolling the Daily Routine requires a confirmation from a popup box.
+
+Dropbox Integration:
+	Stores current settings and exercise machines.
+	Also used to track progress.
+
+When to reroll:
+---------------
+
+This obviously only applies until we actually start writing things back to Dropbox.
+
+- When the first fetch is made (or, essentially, when we have no data already saved.)
+- When a fetch is forced. (i.e. when refresh is called.)
