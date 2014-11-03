@@ -110,7 +110,7 @@ angular.module('starter.services', [ 'starter.services.random' ])
 
   // allExercises = Exercises.all();
 
-  currentDailyExercisestable = currentDailyExercisestable || [];
+  // currentDailyExercisestable = currentDailyExercisestable || [];
 
   dailyCategories = [ 'legs', 'shoulders', 'back', 'chest', 'abdominals' ];
 
@@ -154,6 +154,8 @@ angular.module('starter.services', [ 'starter.services.random' ])
     fetch: function( options ) {
       var promise;
 
+      options = options || {};
+
       if( options.force ) {
         currentDailyExercisestable = null;
       }
@@ -161,9 +163,9 @@ angular.module('starter.services', [ 'starter.services.random' ])
       promise = Exercises.fetch( options );
       promise.then(
         function success() {
-          if( ! currentDailyExercisestable ) {
-            currentDailyExercisestable = rollDailies();
+          if( ! currentDailyExercisestable || currentDailyExercisestable.length < 1 ) {
             allExercises = Exercises.all();
+            currentDailyExercisestable = rollDailies();
           }
         },
         function failure( error ) {

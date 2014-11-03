@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('DailyCtrl', function( $scope, DailyExercises, dropboxSync ) {
 	$scope.isLoaded = false;
-	$Scope.isErrored = false;
+	$scope.isErrored = false;
 
 	// blarbl this should probably be put somewhere else or
 	// streamlined some how so it's not a preamble to every
@@ -66,7 +66,7 @@ angular.module('starter.controllers', [])
 	// Or is that complication for complication's sake?
 	// I guess I'll try it some time.
 	$scope.isLoaded = false;
-	$Scope.isErrored = false;
+	$scope.isErrored = false;
 
 	// blarbl this should probably be put somewhere else or
 	// streamlined some how so it's not a preamble to every
@@ -79,7 +79,7 @@ angular.module('starter.controllers', [])
 
 	function accountLinkedOrNot( isLinked ) {
 		if( isLinked ) {
-			DailyExercises.fetch().then( exercisesFetched, errorFetchingExercises );
+			Exercises.fetch().then( exercisesFetched, errorFetchingExercises );
 		}
 		else {
 			tryToLinkAccount();
